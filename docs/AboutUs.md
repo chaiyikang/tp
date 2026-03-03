@@ -13,9 +13,9 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 <img src="images/henghengyh.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[homepage](https://www.linkedin.com/in/lee-yi-heng-nus/)]
+[[github](https://github.com/henghengyh)]
+[[portfolio](team/henghengyh.md)]
 
 * Role: Project Advisor
 
