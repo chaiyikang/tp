@@ -60,7 +60,7 @@ _A Year 2 Mathematics and Computer Science student at NUS with an interest in ba
 
 ### Nguyen An Thinh
 
-<img src="images/natsupercell.png" width="200px">
+<img src="images/natsupercell.png" width="300px">
 
 [[github](http://github.com/natsupercell)]
 
