@@ -270,19 +270,24 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Value proposition**: manage contacts faster than a typical mouse/GUI driven app
 
-
-### User stories
+### User Stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a … | I want to … | So that I can … |
+|---------|--------|-------------|-----------------|
+| `* * *` | user | add a contact | save their details |
+| `* * *` | user | delete a contact | remove outdated contacts from the database |
+| `* * *` | user | search for a contact by name | quickly find the details of someone based on their name |
+| `* * *` | returning user | view a complete list of all stored contacts | scroll through my network to see all available contacts |
+| `* *` | first-time user | view sample contacts of student leaders and their schedules | understand how the coordination features work without needing to manually input data first |
+| `* *` | user | edit a contact | update their details in the future |
+| `* *` | user who manages many communities | tag and search contacts by committee (e.g. Welfare, Rag) | quickly group leaders and identify which student body they belong to |
+| `* *` | busy student leader | add a "busy" indicator for contacts who have events during a specific week | record periods when certain people are unavailable |
+| `* *` | busy student leader | filter and view contacts who have events during a specific week | avoid scheduling coordination meetings during peak event periods |
+| `*` | user | duplicate a contact | quickly create another contact based on an existing one |
+| `*` | forgetful user | add a new contact with only some of the required fields | quickly record someone I just met before I forget their details |
+| `*` | user ready to adopt the app | mass-import contact details from a CSV or Excel file | onboard hundreds of committee leaders efficiently without manual entry |
 
 *{More to be added}*
 
@@ -325,8 +330,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Contact**: A stored record representing a student leader or collaborator, including information such as name, phone number, email, and committee.
+
+* **Contact list**: The collection of all contacts stored in the application.
+
+* **Committee**: A student organisation group or sub-committee (e.g., Welfare, Rag, Orientation) that a contact may belong to.
+
+* **Busy indicator**: A marker showing that a contact is unavailable during a particular week due to events or commitments.
+
+* **Mass import**: A feature that allows many contacts to be added at once using a CSV or Excel file.
+
+* **First-time user**: A user who is opening the application for the first time and may rely on sample data to understand how the system works.
+
+* **Returning user**: A user who has previously stored contacts in the application and is returning to manage or review them.
+
+* **CLI command**: A text-based instruction entered by the user to perform an action in the application (e.g., `add`, `delete`, `find`, `list`).
+
+*{More to be added}*
 
 --------------------------------------------------------------------------------------------------------------------
 
