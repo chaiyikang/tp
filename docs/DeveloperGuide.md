@@ -317,9 +317,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
+1.  Should work on any _mainstream OS_ (e.g. Windows, macOS and Linux) as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  Should return search results within 1 second for up to 1000 stored contacts.
+5.  A new user should be able to learn basic commands (add, delete, find, list) within 10 minutes using the provided user guide.
+6.  Should not lose stored contacts when the application is closed normally.
+7.  Should store all contact data locally and persist between application sessions.
+8.  Common operations (add, delete, find, list) should execute within 1 second for typical usage.
 
 *{More to be added}*
 
