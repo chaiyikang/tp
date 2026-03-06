@@ -337,9 +337,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 9. User Operation Feedback
     1. Should provide _clear and consistent_ feedback messages (using the same format) to inform the user of successful or failed operations.
 10. Fault Tolerance
-    1. Should ensure that existing contact data remains intact even if a command execution fails due to invalid input. 
-
-*{More to be added}*
+    1. Should ensure that existing contact data remains intact even if a command execution fails due to invalid input.
 
 ### Glossary
 
