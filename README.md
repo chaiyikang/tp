@@ -1,14 +1,18 @@
-[![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
+[![CI Status](https://github.com/AY2526S2-CS2103T-W13-3/tp/actions/workflows/gradle.yml/badge.svg)](https://github.com/AY2526S2-CS2103T-W13-3/tp/actions/workflows/gradle.yml)
 [![codecov](https://codecov.io/gh/AY2526S2-CS2103T-W13-3/tp/graph/badge.svg?token=74GXALW1CP)](https://codecov.io/gh/AY2526S2-CS2103T-W13-3/tp)
 ![Ui](docs/images/Ui.png)
+* This is the**team project of CS2103T-W13-3, titled Campus Connect**.<br>
 
-* This is **the W13-3 sample project for Software Engineering (SE) students**.<br>
-  Example usages:
-  * as a starting point of a course project (as opposed to writing everything from scratch)
-  * as a case study
-* The project simulates an ongoing software project for a desktop application (called _AddressBook_) used for managing contact details.
-  * It is **written in OOP fashion**. It provides a **reasonably well-written** code base **bigger** (around 6 KLoC) than what students usually write in beginner-level SE modules, without being overwhelmingly big.
-  * It comes with a **reasonable level of user and developer documentation**.
-* It is named `AddressBook Level 3` (`AB3` for short) because it was initially created as a part of a series of `AddressBook` projects (`Level 1`, `Level 2`, `Level 3` ...).
-* For the detailed documentation of this project, see the **[Address Book Product Website](https://se-education.org/addressbook-level3)**.
-* This project is a **part of the se-education.org** initiative. If you would like to contribute code to this project, see [se-education.org](https://se-education.org/#contributing-to-se-edu) for more info.
+**CampusConnect** is a streamlined contact management application designed specifically for the Secretary of the NUS Students’ Union (NUSSU). 
+
+Managing multiple student leadership bodies often means juggling scattered contacts across spreadsheets, Telegram, and emails. CampusConnect solves this by centralizing leader information, allowing you to instantly find who you need and see when they are busy, reducing administrative overhead and the mental load of constant context-switching.
+
+### Key Features
+* **Centralized Database:** Quickly add, edit, delete, and search for contacts by name or committee (e.g., Welfare, Rag).
+* **Availability Tracking:** Set and filter "busy" indicators for specific weeks to easily see who is tied up with events and avoid scheduling conflicts.
+* **Fast Data Entry:** Duplicate existing contacts, save partial contact details on the fly during busy days, or mass-import hundreds of leaders via CSV.
+* **Clutter-Free Management:** Bulk-edit or archive outdated contacts (like graduated members or past events) to keep your active workspace clean.
+* **Instant Onboarding:** Comes pre-loaded with sample data so new users can learn the coordination features without manual setup.
+
+
+This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
