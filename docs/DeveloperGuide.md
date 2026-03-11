@@ -276,20 +276,20 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a … | I want to … | So that I can … |
-|---------|--------|-------------|-----------------|
-| `* * *` | user | add a contact | save their details |
-| `* * *` | user | delete a contact | remove outdated contacts from the database |
-| `* * *` | user | search for a contact by name | quickly find the details of someone based on their name |
-| `* * *` | returning user | view a complete list of all stored contacts | scroll through my network to see all available contacts |
-| `* *` | first-time user | view sample contacts of student leaders and their schedules | understand how the coordination features work without needing to manually input data first |
-| `* *` | user | edit a contact | update their details in the future |
-| `* *` | user who manages many communities | tag and search contacts by committee (e.g. Welfare, Rag) | quickly group leaders and identify which student body they belong to |
-| `* *` | busy student leader | add a "busy" indicator for contacts who have events during a specific week | record periods when certain people are unavailable |
-| `* *` | busy student leader | filter and view contacts who have events during a specific week | avoid scheduling coordination meetings during peak event periods |
-| `*` | user | duplicate a contact | quickly create another contact based on an existing one |
-| `*` | forgetful user | add a new contact with only some of the required fields | quickly record someone I just met before I forget their details |
-| `*` | user ready to adopt the app | mass-import contact details from a CSV or Excel file | onboard hundreds of committee leaders efficiently without manual entry |
+| Priority | As a … | I want to …                                                                | So that I can …                                                                            |
+|---------|--------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `* * *` | user | add a contact                                                              | save their details                                                                         |
+| `* * *` | user | delete a contact                                                           | remove outdated contacts from the database                                                 |
+| `* * *` | user | search for a contact by name                                               | quickly find the details of someone based on their name                                    |
+| `* * *` | returning user | view a useful list of all stored contacts                                  | scroll through my network customised for ease of viewing to access all available contacts  |
+| `* *` | first-time user | view sample contacts of student leaders and their schedules                | understand how the coordination features work without needing to manually input data first |
+| `* *` | user | edit a contact                                                             | update their details in the future                                                         |
+| `* *` | user who manages many communities | tag and search contacts by committee (e.g. Welfare, Rag)                   | quickly group leaders and identify which student body they belong to                       |
+| `* *` | busy student leader | add a "busy" indicator for contacts who have events during a specific week | record periods when certain people are unavailable                                         |
+| `* *` | busy student leader | filter and view contacts who have events during a specific week            | avoid scheduling coordination meetings during peak event periods                           |
+| `*` | user | duplicate a contact                                                        | quickly create another contact based on an existing one                                    |
+| `*` | forgetful user | add a new contact with only some of the required fields                    | quickly record someone I just met before I forget their details                            |
+| `*` | user ready to adopt the app | mass-import contact details from a CSV or Excel file                       | onboard hundreds of committee leaders efficiently without manual entry                     |
 
 *{More to be added}*
 
