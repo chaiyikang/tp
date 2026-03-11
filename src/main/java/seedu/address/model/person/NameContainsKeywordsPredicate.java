@@ -18,8 +18,11 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
 
     @Override
     public boolean test(Person person) {
+        // EDIT: change from search full word to search partial word
         return keywords.stream()
-                .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getName().fullName, keyword));
+                .anyMatch(
+                        keyword -> person.getName().fullName.toLowerCase()
+                                .contains(keyword.toLowerCase()));
     }
 
     @Override
