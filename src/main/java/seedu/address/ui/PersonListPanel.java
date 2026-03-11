@@ -1,8 +1,10 @@
 package seedu.address.ui;
 
+import java.util.Comparator;
 import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -16,6 +18,7 @@ import seedu.address.model.person.Person;
 public class PersonListPanel extends UiPart<Region> {
     private static final String FXML = "PersonListPanel.fxml";
     private final Logger logger = LogsCenter.getLogger(PersonListPanel.class);
+    private static Comparator<Person> comparator = null;
 
     @FXML
     private ListView<Person> personListView;
@@ -25,8 +28,17 @@ public class PersonListPanel extends UiPart<Region> {
      */
     public PersonListPanel(ObservableList<Person> personList) {
         super(FXML);
-        personListView.setItems(personList);
+        SortedList<Person> sortedList = new SortedList<>(personList);
+        sortedList.setComparator(Comparator.comparing(p -> p.getName().fullName));
         personListView.setCellFactory(listView -> new PersonListViewCell());
+    }
+
+    /**
+     * Sets the comparator for sorting the list of persons.
+     * @param comp
+     */
+    public static void setComparator(Comparator<Person> comp) {
+        comparator = comp;
     }
 
     /**

@@ -7,6 +7,7 @@ import java.util.Comparator;
 
 import seedu.address.model.Model;
 import seedu.address.model.person.Person;
+import seedu.address.ui.PersonListPanel;
 
 /**
  * Lists all persons in the address book to the user.
@@ -34,8 +35,11 @@ public class ListCommand extends Command {
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
 
         if (shouldSort) {
-            model.getFilteredPersonList()
-                    .sort(Comparator.comparing(person -> person.getName().fullName));
+            PersonListPanel.setComparator(
+                    Comparator.comparing(p -> p.getName().toString())
+            );
+        } else {
+            PersonListPanel.setComparator(null);
         }
 
         return new CommandResult(MESSAGE_SUCCESS);
