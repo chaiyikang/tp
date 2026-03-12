@@ -276,20 +276,20 @@ _{Explain here how the data archiving feature will be implemented}_
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a … | I want to … | So that I can … |
-|---------|--------|-------------|-----------------|
-| `* * *` | user | add a contact | save their details |
-| `* * *` | user | delete a contact | remove outdated contacts from the database |
-| `* * *` | user | search for a contact by name | quickly find the details of someone based on their name |
-| `* * *` | returning user | view a complete list of all stored contacts | scroll through my network to see all available contacts |
-| `* *` | first-time user | view sample contacts of student leaders and their schedules | understand how the coordination features work without needing to manually input data first |
-| `* *` | user | edit a contact | update their details in the future |
-| `* *` | user who manages many communities | tag and search contacts by committee (e.g. Welfare, Rag) | quickly group leaders and identify which student body they belong to |
-| `* *` | busy student leader | add a "busy" indicator for contacts who have events during a specific week | record periods when certain people are unavailable |
-| `* *` | busy student leader | filter and view contacts who have events during a specific week | avoid scheduling coordination meetings during peak event periods |
-| `*` | user | duplicate a contact | quickly create another contact based on an existing one |
-| `*` | forgetful user | add a new contact with only some of the required fields | quickly record someone I just met before I forget their details |
-| `*` | user ready to adopt the app | mass-import contact details from a CSV or Excel file | onboard hundreds of committee leaders efficiently without manual entry |
+| Priority | As a … | I want to …                                                                | So that I can …                                                                            |
+|---------|--------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `* * *` | user | add a contact                                                              | save their details                                                                         |
+| `* * *` | user | delete a contact                                                           | remove outdated contacts from the database                                                 |
+| `* * *` | user | search for a contact by name                                               | quickly find the details of someone based on their name                                    |
+| `* * *` | returning user | view a useful list of all stored contacts                                  | scroll through my network customised for ease of viewing to access all available contacts  |
+| `* *` | first-time user | view sample contacts of student leaders and their schedules                | understand how the coordination features work without needing to manually input data first |
+| `* *` | user | edit a contact                                                             | update their details in the future                                                         |
+| `* *` | user who manages many communities | tag and search contacts by committee (e.g. Welfare, Rag)                   | quickly group leaders and identify which student body they belong to                       |
+| `* *` | busy student leader | add a "busy" indicator for contacts who have events during a specific week | record periods when certain people are unavailable                                         |
+| `* *` | busy student leader | filter and view contacts who have events during a specific week            | avoid scheduling coordination meetings during peak event periods                           |
+| `*` | user | duplicate a contact                                                        | quickly create another contact based on an existing one                                    |
+| `*` | forgetful user | add a new contact with only some of the required fields                    | quickly record someone I just met before I forget their details                            |
+| `*` | user ready to adopt the app | mass-import contact details from a CSV or Excel file                       | onboard hundreds of committee leaders efficiently without manual entry                     |
 
 *{More to be added}*
 
@@ -424,6 +424,43 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. Marcus enters a new search query.
     * Use case resumes at step 2.
 
+---
+
+**UC07: List All Contacts without Sorting**
+
+**Goal:** To view all stored contacts quickly in the default order.
+
+**MSS (Main Success Scenario):**
+1. Marcus instructs the application to list all contact without sorting.
+2. CampusConnect displays all stored contacts in the default order - order of creation.  
+   Use case ends.
+
+**Extensions:**
+* 2a. No contacts exist in the system.
+    * 2a1. CampusConnect displays a "No contacts found" message.
+    * 2a2. Marcus can choose to **add a contact** (resumes at UC04 step 1).
+
+---
+
+**UC08: List All Contacts with Sorting**
+
+**Goal:** To view all stored contacts quickly and optionally sort them in ascending or descending order.
+
+**MSS (Main Success Scenario):**
+1. Marcus instructs the application to list all contact with a sorting order.
+2. CampusConnect displays all stored contacts in the instructed order (e.g., ascending, descending).
+   Use case ends.
+
+**Extensions:**
+* 2a. No contacts exist in the system.
+    * 2a1. CampusConnect displays a "No contacts found" message.
+    * 2a2. Marcus can choose to **add a contact** (resumes at UC04 step 1).
+* 3a. Marcus enters an invalid sorting instruction.
+    * 3a1. CampusConnect displays an error message explaining the command format.
+    * 3a2. Marcus re-enters a valid sort field.
+    * Use case resumes at step 1.
+
+---
 ### Non-Functional Requirements
 
 1. Portability
