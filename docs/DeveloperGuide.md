@@ -424,6 +424,43 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a2. Marcus enters a new search query.
     * Use case resumes at step 2.
 
+---
+
+**UC07: List All Contacts without Sorting**
+
+**Goal:** To view all stored contacts quickly in the default order.
+
+**MSS (Main Success Scenario):**
+1. Marcus instructs the application to list all contact without sorting.
+2. CampusConnect displays all stored contacts in the default order - order of creation.  
+   Use case ends.
+
+**Extensions:**
+* 2a. No contacts exist in the system.
+    * 2a1. CampusConnect displays a "No contacts found" message.
+    * 2a2. Marcus can choose to **add a contact** (resumes at UC04 step 1).
+
+---
+
+**UC08: List All Contacts with Sorting**
+
+**Goal:** To view all stored contacts quickly and optionally sort them in ascending or descending order.
+
+**MSS (Main Success Scenario):**
+1. Marcus instructs the application to list all contact with a sorting order.
+2. CampusConnect displays all stored contacts in the instructed order (e.g., ascending, descending).
+   Use case ends.
+
+**Extensions:**
+* 2a. No contacts exist in the system.
+    * 2a1. CampusConnect displays a "No contacts found" message.
+    * 2a2. Marcus can choose to **add a contact** (resumes at UC04 step 1).
+* 3a. Marcus enters an invalid sorting instruction.
+    * 3a1. CampusConnect displays an error message explaining the command format.
+    * 3a2. Marcus re-enters a valid sort field.
+    * Use case resumes at step 1.
+
+---
 ### Non-Functional Requirements
 
 1. Portability
