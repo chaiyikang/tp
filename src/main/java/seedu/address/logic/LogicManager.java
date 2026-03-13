@@ -33,6 +33,8 @@ public class LogicManager implements Logic {
     private final Storage storage;
     private final AddressBookParser addressBookParser;
 
+    private boolean isAwaitingConfirmation;
+
     /**
      * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
      */
@@ -40,6 +42,7 @@ public class LogicManager implements Logic {
         this.model = model;
         this.storage = storage;
         addressBookParser = new AddressBookParser();
+        this.isAwaitingConfirmation = false;
     }
 
     @Override
@@ -48,7 +51,9 @@ public class LogicManager implements Logic {
 
         CommandResult commandResult;
         Command command = addressBookParser.parseCommand(commandText);
+        // create a new command type. maybe AwaitDeleteCommand 
         commandResult = command.execute(model);
+        // commandResult will tell us that we need to await. update the flag
 
         try {
             storage.saveAddressBook(model.getAddressBook());
