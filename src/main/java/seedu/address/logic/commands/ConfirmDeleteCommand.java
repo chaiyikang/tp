@@ -43,7 +43,8 @@ public class ConfirmDeleteCommand extends Command {
         }
 
         Person personToDelete = lastShownList.get(targetIndex.getZeroBased());
-        return new CommandResult(String.format(MESSAGE_ASK_CONFIRMATION, Messages.format(personToDelete)));
+        return new CommandResult(String.format(MESSAGE_ASK_CONFIRMATION, Messages.format(personToDelete)),
+                false, false, true);
     }
 
     @Override

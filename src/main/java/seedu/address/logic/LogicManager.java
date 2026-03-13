@@ -34,6 +34,7 @@ public class LogicManager implements Logic {
     private final AddressBookParser addressBookParser;
 
     private boolean isAwaitingConfirmation;
+    private Command awaitingCommand;
 
     /**
      * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
@@ -43,17 +44,36 @@ public class LogicManager implements Logic {
         this.storage = storage;
         addressBookParser = new AddressBookParser();
         this.isAwaitingConfirmation = false;
+        this.awaitingCommand = null;
     }
 
     @Override
     public CommandResult execute(String commandText) throws CommandException, ParseException {
         logger.info("----------------[USER COMMAND][" + commandText + "]");
 
-        CommandResult commandResult;
-        Command command = addressBookParser.parseCommand(commandText);
-        // create a new command type. maybe AwaitDeleteCommand 
-        commandResult = command.execute(model);
-        // commandResult will tell us that we need to await. update the flag
+        CommandResult commandResult = null;
+
+        boolean currentlyAwaitingYesNo = this.isAwaitingConfirmation;
+        if (!currentlyAwaitingYesNo) {
+            Command command = addressBookParser.parseCommandWithConfirmation(commandText);
+            // either execute a ConfirmXXXCommand (e.g. ConfirmDeleteCommand) or a normal command
+            // that has no confirmation step (e.g. list) 
+            commandResult = command.execute(model);
+            boolean thisCommandRequiresConfirmation = commandResult.isAwaitingConfirmation();
+            if (thisCommandRequiresConfirmation) {
+                this.isAwaitingConfirmation = true;
+                this.awaitingCommand = addressBookParser.parseCommand(commandText);
+            }
+        } else if (currentlyAwaitingYesNo) {
+            boolean hasConfirmed = addressBookParser.parseYesNo(commandText);
+            if (hasConfirmed) {
+                commandResult = awaitingCommand.execute(model);
+            } else {
+                commandResult = new CommandResult("");
+            }
+            this.isAwaitingConfirmation = false;
+            this.awaitingCommand = null;
+        }
 
         try {
             storage.saveAddressBook(model.getAddressBook());
@@ -65,6 +85,7 @@ public class LogicManager implements Logic {
 
         return commandResult;
     }
+
 
     @Override
     public ReadOnlyAddressBook getAddressBook() {

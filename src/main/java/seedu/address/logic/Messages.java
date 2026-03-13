@@ -19,6 +19,7 @@ public class Messages {
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
     public static final String MESSAGE_CONTAINS_NON_ALPHANUMERIC_CHARACTER = "Only give alphanumeric keywords";
+    public static final String MESSAGE_ONLY_YES_NO = "Please enter either \'y\' or \'n\'";
 
     /**
      * Returns an error message indicating the duplicate prefixes.
