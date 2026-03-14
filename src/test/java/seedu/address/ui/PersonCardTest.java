@@ -3,9 +3,11 @@ package seedu.address.ui;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -34,6 +36,8 @@ public class PersonCardTest {
             Platform.startup(() -> {});
         } catch (IllegalStateException e) {
             // Toolkit already initialized
+        } catch (UnsupportedOperationException e) {
+            System.out.println("JavaFX startup not supported in this environment; continuing");
         }
     }
 
@@ -61,7 +65,9 @@ public class PersonCardTest {
             personCard[0] = new PersonCard(person, 1);
             latch.countDown();
         });
-        latch.await();
+        if (!latch.await(5, TimeUnit.SECONDS)) {
+            fail("Test timed out on JavaFX thread. Toolkit may not have initialized correctly.");
+        }
 
         Label idLabel = getPrivateField(personCard[0], "id");
         Label nameLabel = getPrivateField(personCard[0], "name");
