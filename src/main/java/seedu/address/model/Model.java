@@ -15,10 +15,10 @@ public interface Model {
     /** {@code Predicate} that always evaluate to true */
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
     Comparator<Person> SORT_BY_NAME_ASCENDING =
-            Comparator.comparing(
-                    (Person p) -> p.getName().fullName,
-                    String.CASE_INSENSITIVE_ORDER
-            ).thenComparing(p -> p.getName().fullName);
+            Comparator
+                    .comparing((Person p) -> p.getName().fullName,
+                            String.CASE_INSENSITIVE_ORDER)
+            .thenComparing(p -> p.getName().fullName);
     Comparator<Person> SORT_BY_NAME_DESCENDING = SORT_BY_NAME_ASCENDING.reversed();
 
     /**

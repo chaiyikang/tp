@@ -41,10 +41,10 @@ public class ModelManager implements Model {
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
         sortedFilteredPersons = new SortedList<>(filteredPersons);
 
-        ascendingComparator = Comparator.comparing(
-                (Person p) -> p.getName().fullName,
-                String.CASE_INSENSITIVE_ORDER
-        ).thenComparing(p -> p.getName().fullName);
+        ascendingComparator = Comparator
+                .comparing((Person p) -> p.getName().fullName,
+                        String.CASE_INSENSITIVE_ORDER
+                ).thenComparing(p -> p.getName().fullName);
 
         descendingComparator = ascendingComparator.reversed();
 

@@ -26,6 +26,9 @@ public class ListCommand extends Command {
             + "Example: " + COMMAND_WORD + " sort ascending\n"
             + "Example: " + COMMAND_WORD + " sort reverse";
 
+    /**
+     * Represents the sorting order for the list command.
+     */
     public enum SortOrder {
         NONE,
         ASCENDING,
