@@ -35,7 +35,7 @@ public class ListCommandTest {
     }
 
     @Test
-    public void execute_listIsFiltered_showsEverything() throws CommandException, ParseException {
+    public void execute_listIsFiltered_showsEverything() throws ParseException, CommandException {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
         assertCommandSuccess(new ListCommandParser().parse(""), model, ListCommand.MESSAGE_SUCCESS, expectedModel);
     }

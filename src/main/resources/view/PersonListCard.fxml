@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -9,29 +10,58 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-  <GridPane HBox.hgrow="ALWAYS">
-    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10" prefWidth="150" />
-    </columnConstraints>
-    <VBox alignment="CENTER_LEFT" minHeight="105" GridPane.columnIndex="0">
-      <padding>
-        <Insets top="5" right="5" bottom="5" left="15" />
-      </padding>
-      <HBox spacing="0.5" alignment="CENTER_LEFT">
-        <Label fx:id="id" styleClass="cell_big_label">
-          <minWidth>
-            <!-- Ensures that the label text is never truncated -->
-            <Region fx:constant="USE_PREF_SIZE" />
-          </minWidth>
-        </Label>
-        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
-      </HBox>
-      <FlowPane fx:id="tags" />
-      <Label fx:id="role" styleClass="cell_small_label" text="\$role" />
-      <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
-      <Label fx:id="address" styleClass="cell_small_label" text="\$address" />
-      <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
-    </VBox>
-  </GridPane>
+<HBox id="cardPane" fx:id="cardPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      styleClass="person-card" spacing="20">
+
+  <!-- LEFT COLUMN -->
+  <VBox fx:id="leftPane" alignment="TOP_LEFT" spacing="10" prefWidth="850">
+    <padding>
+      <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- TOP: ID + Name -->
+    <HBox spacing="10" alignment="BASELINE_LEFT">
+      <Label fx:id="id" styleClass="cell_id_label">
+        <minWidth>
+          <Region fx:constant="USE_PREF_SIZE"/>
+        </minWidth>
+      </Label>
+      <Label fx:id="name" text="$first" styleClass="cell_name_label"/>
+    </HBox>
+
+    <!-- BOTTOM: Contact Info (Phone / Email / Address) -->
+    <GridPane hgap="15" alignment="CENTER_LEFT">
+      <columnConstraints>
+        <ColumnConstraints minWidth="120" halignment="LEFT"/>
+        <ColumnConstraints minWidth="180" halignment="LEFT"/>
+        <ColumnConstraints minWidth="300" hgrow="ALWAYS" halignment="LEFT"/>
+        <ColumnConstraints minWidth="100" halignment="LEFT"/>
+        <ColumnConstraints minWidth="100" halignment="LEFT"/>
+      </columnConstraints>
+
+      <Label fx:id="phone" styleClass="cell_phone_label" text="$phone" GridPane.valignment="TOP" GridPane.columnIndex="0"/>
+      <Label fx:id="email" styleClass="cell_email_label" text="$email" GridPane.valignment="TOP" GridPane.columnIndex="1"/>
+      <Label fx:id="address"
+             styleClass="cell_address_label"
+             text="$address"
+             wrapText="true"
+             GridPane.valignment="TOP"
+             GridPane.columnIndex="2"/>
+      <Label fx:id="role" styleClass="cell_role_label" text="$role" GridPane.valignment="TOP" GridPane.columnIndex="3"/>
+      <FlowPane fx:id="tags"
+                prefWrapLength="140"
+                styleClass="tag-container"
+                GridPane.columnIndex="4"/>
+    </GridPane>
+  </VBox>
+
+  <!-- RIGHT COLUMN -->
+  <VBox fx:id="rightPane" alignment="TOP_LEFT" spacing="10" prefWidth="150">
+    <padding>
+      <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- BOTTOM: Tags -->
+
+  </VBox>
 </HBox>
